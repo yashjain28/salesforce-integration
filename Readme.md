@@ -11,7 +11,17 @@ This is an ipm package, which contains one or more reusable assets within the ip
 
 ## Setup
 
-_Add any setup instructions, such as an API Key_
+Edit the library salesforceConstants to attach to your Salesforce instance
+var salesforce_consumerKey =   "";
+var salesforce_consumerSecret = "";
+var salesforce_userSecret = "";
+var salesforce_username = "";
+var salesforce_password = "";d
+
+Use the library SalesForceLib to authenticate to your instance
+Use the library SalesForceLib to run SOQL query against Salesforce
+
+See the ExampleSaleforce service for usage reference
 
 ## API
 
