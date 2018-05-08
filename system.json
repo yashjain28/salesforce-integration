@@ -1,0 +1,10 @@
+{
+    "auth": true,
+    "deployments": [],
+    "description": "",
+    "messaging_url": "staging.clearblade.com:1883",
+    "name": "salesforce-integration",
+    "platform_url": "https://staging.clearblade.com",
+    "system_key": "f4b187af0bb694ccccd087ec9469",
+    "system_secret": "F4B187AF0BB8B1FDC69299E5A4F701"
+}
