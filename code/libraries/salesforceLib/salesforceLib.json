@@ -1,0 +1,8 @@
+{
+    "api": "",
+    "dependencies": "http,log,salesforceConstants",
+    "description": "",
+    "name": "salesforceLib",
+    "version": 10,
+    "visibility": "system"
+}
