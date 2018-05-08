@@ -1,0 +1,10 @@
+{
+    "current_version": 4,
+    "dependencies": "salesforceLib",
+    "logging_enabled": "false",
+    "name": "salesforceExample",
+    "params": [],
+    "permissions": {},
+    "run_user": "",
+    "source": "salesforceExample.js"
+}
