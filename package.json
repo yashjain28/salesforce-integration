@@ -1,0 +1,31 @@
+{
+    "author": {
+        "email": "aaron@clearblade.com"
+    },
+    "clouds": [],
+    "description": "Rapidly integrate Salesforce to add context to your IoT Solution.  This library demonstrates how to query against your organizations Salesforce data.",
+    "domains": [
+        "salesforce"
+    ],
+    "gateways": [],
+    "image_url": "https://res.cloudinary.com/hy4kyit2a/image/upload/sd_social300x300_1.png",
+    "keywords": [
+        "clearblade",
+        "iot",
+        "platform",
+        "salesforce",
+        "crm",
+        "enterprise",
+        "customer"
+    ],
+    "license": "MIT",
+    "name": "salesforce-integration",
+    "private": false,
+    "prog_lang": [],
+    "protocols": [
+        "http",
+        "SOQL"
+    ],
+    "things": [],
+    "version": "1.0.0"
+}
