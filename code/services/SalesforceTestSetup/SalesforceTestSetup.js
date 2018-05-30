@@ -8,8 +8,8 @@ function SalesforceTestSetup(req, resp){
 
     var errMessages = [];
 
-    for (var property in CONFIG) {
-        if (CONFIG.hasOwnProperty(property) && (!isConfigured(CONFIG[property]))){
+    for (var property in SALESFORCE_CONFIG) {
+        if (SALESFORCE_CONFIG.hasOwnProperty(property) && (!isConfigured(SALESFORCE_CONFIG[property]))){
             errMessages.push(property + " not set in SalesforceConstants Library");
         }
     }  

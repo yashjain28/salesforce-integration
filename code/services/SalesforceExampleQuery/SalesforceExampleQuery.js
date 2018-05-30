@@ -9,7 +9,7 @@ function SalesforceExampleQuery(req, resp){
     
     var sendResponse = function(err, queryResult) {
         if (err ){
-            resp.error("Failed to execute Query" + queryResult);
+            resp.error("Failed to execute Query " + queryResult);
         }else {
             resp.success(queryResult)   
         }
@@ -21,7 +21,7 @@ function SalesforceExampleQuery(req, resp){
 
     function querySelectedInstanceCallback(err, data) {
         if (err){
-            sendResponse(true, ("Failed to authenticate" + data));
+            sendResponse(true, ("Failed to authenticate " + data));
         }else {
             //Ex: query: "SELECT phone from Contact where name = 'John Doe'"
             var field = "phone";

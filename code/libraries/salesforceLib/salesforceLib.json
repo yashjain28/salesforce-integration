@@ -3,6 +3,6 @@
     "dependencies": "http,log,SalesforceConstants",
     "description": "",
     "name": "SalesforceLib",
-    "version": 4,
+    "version": 9,
     "visibility": "system"
 }

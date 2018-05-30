@@ -27,7 +27,8 @@ function Salesforce(){
      * salesforce.authenticate(querySelectedInstanceCallback);
      */
     function authenticate(callback) {
-        var authBody = "grant_type=password&client_id=" + CONFIG.SALESFORCE_PASSWORDSALESFORCE_CONSUMER_KEY + "&client_secret=" + CONFIG.SALESFORCE_PASSWORDSALESFORCE_CONSUMER_SECRET + "&username=" + CONFIG.SALESFORCE_PASSWORDSALESFORCE_USER_NAME + "&password=" + CONFIG.SALESFORCE_PASSWORDSALESFORCE_PASSWORD + CONFIG.SALESFORCE_PASSWORDSALESFORCE_USER_SECRET;
+        var conf = SALESFORCE_CONFIG;
+        var authBody = "grant_type=password&client_id=" + conf.CONSUMER_KEY + "&client_secret=" + conf.CONSUMER_SECRET + "&username=" + conf.USER_NAME + "&password=" + conf.PASSWORD + conf.USER_SECRET;
         var requestObject = Requests();
         var options = {
             "uri": "https://login.salesforce.com/services/oauth2/token",
@@ -112,6 +113,11 @@ function Salesforce(){
                 callback(false, data);
             }
         });
+    }
+    
+    return {
+        authenticate,
+        querySelectedInstance
     }
     
 }
