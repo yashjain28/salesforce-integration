@@ -1,5 +1,7 @@
-var salesforce_consumerKey =   "";
-var salesforce_consumerSecret = "";
-var salesforce_userSecret = "";
-var salesforce_username = "";
-var salesforce_password = "";
+
+
+var SALESFORCE_CONSUMERKEY =   "";
+var SALESFORCE_CONSUMERSECRET = "";
+var SALESFORCE_USERSECRET = "";
+var SALESFORCE_USERNAME = "";
+var SALESFORCE_PASSWORD = "";
