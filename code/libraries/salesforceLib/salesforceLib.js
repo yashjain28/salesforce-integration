@@ -27,7 +27,7 @@ function Salesforce(){
      * salesforce.authenticate(querySelectedInstanceCallback);
      */
     function authenticate(callback) {
-        var authBody = "grant_type=password&client_id=" + SALESFORCE_CONSUMERKEY + "&client_secret=" + SALESFORCE_CONSUMERSECRET + "&username=" + SALESFORCE_USERNAME + "&password=" + SALESFORCE_PASSWORD + SALESFORCE_USERSECRET;
+        var authBody = "grant_type=password&client_id=" + CONFIG.SALESFORCE_PASSWORDSALESFORCE_CONSUMER_KEY + "&client_secret=" + CONFIG.SALESFORCE_PASSWORDSALESFORCE_CONSUMER_SECRET + "&username=" + CONFIG.SALESFORCE_PASSWORDSALESFORCE_USER_NAME + "&password=" + CONFIG.SALESFORCE_PASSWORDSALESFORCE_PASSWORD + CONFIG.SALESFORCE_PASSWORDSALESFORCE_USER_SECRET;
         var requestObject = Requests();
         var options = {
             "uri": "https://login.salesforce.com/services/oauth2/token",

@@ -1,7 +1,7 @@
 {
     "auto_restart": false,
     "concurrency": 0,
-    "current_version": 2,
+    "current_version": 5,
     "dependencies": "SalesforceLib",
     "execution_timeout": 0,
     "logging_enabled": "false",

@@ -3,6 +3,6 @@
     "dependencies": "",
     "description": "",
     "name": "SalesforceConstants",
-    "version": 3,
+    "version": 5,
     "visibility": "system"
 }

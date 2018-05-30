@@ -2,30 +2,19 @@
  * This service ensures that constants for this ipm package are set.
  */
 function SalesforceTestSetup(req, resp){
-    Configuration = {
-         SALESFORCE_CONSUMERKEY,
-         SALESFORCE_CONSUMERSECRET,
-         SALESFORCE_USERSECRET,
-         SALESFORCE_USERNAME,
-         SALESFORCE_PASSWORD
-    }
-    var checkConstantEmpty = function (constant) {
-        if (constant === "") {
-            return true;
-        } else {
-            return false;
-        }
+    var isConfigured = function (constant) {
+        return constant ? true : false
     }
 
     var errMessages = [];
 
-    for (var property in Configuration) {
-        if ( Configuration.hasOwnProperty(property) && (checkConstantEmpty(Configuration[property]))){
+    for (var property in CONFIG) {
+        if (CONFIG.hasOwnProperty(property) && (!isConfigured(CONFIG[property]))){
             errMessages.push(property + " not set in SalesforceConstants Library");
         }
     }  
     
-    if(errMessages.length > 0){
+    if(errMessages){
         resp.error(errMessages);
     }
     else{
