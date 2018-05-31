@@ -1,8 +1,8 @@
 {
     "api": "",
-    "dependencies": "http,log,salesforceConstants",
+    "dependencies": "http,log,SalesforceConstants",
     "description": "",
-    "name": "salesforceLib",
-    "version": 10,
+    "name": "SalesforceLib",
+    "version": 9,
     "visibility": "system"
 }

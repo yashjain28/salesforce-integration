@@ -1,5 +1,9 @@
-var salesforce_consumerKey =   "";
-var salesforce_consumerSecret = "";
-var salesforce_userSecret = "";
-var salesforce_username = "";
-var salesforce_password = "";
+
+
+const SALESFORCE_CONFIG = {
+    CONSUMER_KEY :  "",
+    CONSUMER_SECRET: "",
+    USER_SECRET: "",
+    USER_NAME :"",
+    PASSWORD: ""
+}

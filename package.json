@@ -1,11 +1,15 @@
 {
-    "author": {
-        "email": "aaron@clearblade.com"
-    },
+    "author": "Aaron Allsbrook <aaron@clearblade.com>",
     "clouds": [],
     "description": "Rapidly integrate Salesforce to add context to your IoT Solution.  This library demonstrates how to query against your organizations Salesforce data.",
     "domains": [
         "salesforce"
+    ],
+    "asset_types": [
+        "System",
+        "Code Services",
+        "Code Libraries",
+        "Triggers"
     ],
     "gateways": [],
     "image_url": "https://res.cloudinary.com/hy4kyit2a/image/upload/sd_social300x300_1.png",
@@ -27,5 +31,22 @@
         "SOQL"
     ],
     "things": [],
-    "version": "1.0.0"
+    "version": "2.0.0",
+    "dependencies": {
+        "http": "latest"
+    },
+    "scripts": {
+        "jsdoc": "jsdoc2md code/libraries/*/*.js --heading-depth=3 > jsdoc.md"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aallsbrook/salesforce-integration.git"
+    },
+    "bugs": {
+        "url": "https://github.com/aallsbrook/salesforce-integration/issues"
+    },
+    "homepage": "https://github.com/aallsbrook/salesforce-integration#readme",
+    "devDependencies": {
+        "jsdoc-to-markdown": "^4.0.1"
+    }
 }

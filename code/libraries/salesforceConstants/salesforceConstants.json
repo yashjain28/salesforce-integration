@@ -2,7 +2,7 @@
     "api": "",
     "dependencies": "",
     "description": "",
-    "name": "salesforceConstants",
-    "version": 2,
+    "name": "SalesforceConstants",
+    "version": 7,
     "visibility": "system"
 }

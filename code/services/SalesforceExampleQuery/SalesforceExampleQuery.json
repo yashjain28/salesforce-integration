@@ -1,0 +1,13 @@
+{
+    "auto_restart": false,
+    "concurrency": 0,
+    "current_version": 11,
+    "dependencies": "SalesforceLib",
+    "execution_timeout": 0,
+    "logging_enabled": "false",
+    "name": "SalesforceExampleQuery",
+    "params": [],
+    "permissions": {},
+    "run_user": "",
+    "source": "SalesforceExampleQuery.js"
+}

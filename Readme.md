@@ -1,4 +1,3 @@
-
 # ipm package: salesforce-integration
 
 ## Overview
@@ -11,36 +10,132 @@ This is an ipm package, which contains one or more reusable assets within the ip
 
 ## Setup
 
-Edit the library salesforceConstants to attach to your Salesforce instance
-var salesforce_consumerKey =   "";
-var salesforce_consumerSecret = "";
-var salesforce_userSecret = "";
-var salesforce_username = "";
-var salesforce_password = "";d
-
-Use the library SalesForceLib to authenticate to your instance
-Use the library SalesForceLib to run SOQL query against Salesforce
-
-See the ExampleSaleforce service for usage reference
-
-## API
-
-_Document your API here_
+Edit the library SalesforceConstants to attach to your Salesforce instance. 
+Use the library _SalesforceLib_ to authenticate to your instance. Then run SOQL query against Salesforce.
 
 ## Usage
 
-_Describe assets_
+Rapidly integrate Salesforce to add context to your IoT Solution. Easily query against your organizations Salesforce data. 
 
+## Assets
 ### Code Services
 
+#### Example
+
+`SalesforceExampleQuery` - Shows an example to run an SOQL query on Salesforce.
+
+#### Test
+
+`SalesforceTestSetup` - This service ensures that constants for this ipm package are set.
 ### Code Libraries
 
-### Portals
+* `SalesforceLib` - This library helps user to authenticate and query Salesforce. Access it by creating an instance using _Salesforce()_.
 
-### Collections
+* `SalesforceConstants` - a constants library, which holds constants specific to this ipm package. 
 
-### ...
+## API
 
-## Thank you
+### Typedefs
 
-Powered by ClearBlade Enterprise IoT Platform: [https://platform.clearblade.com](https://platform.clearblade.com)
+<dl>
+<dt><a href="#callback">callback</a> : <code>function</code></dt>
+<dd><p>This callback is displayed as part of this Library.</p>
+</dd>
+<dt><a href="#Salesforce">Salesforce</a> : <code>Object</code></dt>
+<dd><p>This library demonstrates how to query against your organizations Salesforce data.</p>
+</dd>
+</dl>
+
+<a name="callback"></a>
+
+### callback : <code>function</code>
+This callback is displayed as part of this Library.
+
+**Kind**: global typedef  
+
+| Param | Type |
+| --- | --- |
+| err | <code>Object</code> | 
+| data | <code>Object</code> | 
+
+<a name="Salesforce"></a>
+
+### Salesforce : <code>Object</code>
+This library demonstrates how to query against your organizations Salesforce data.
+
+**Kind**: global typedef  
+**Example**  
+
+```js
+var salesforce = Salesforce();
+```
+
+* [Salesforce](#Salesforce) : <code>Object</code>
+    * [.authenticate(callback)](#Salesforce.authenticate)
+    * [.querySelectedInstance(field, object, filterField, filterOperator, filterValue, callback)](#Salesforce.querySelectedInstance)
+
+<a name="Salesforce.authenticate"></a>
+
+#### Salesforce.authenticate(callback)
+This method helps user authorize into Salesforce platform and get a tokena dn instance_url in response.
+It assumes the global constants in the SalesforceConstants library are set.
+On successful execution of this function, *instance_url* and *token* variables are set.
+
+**Kind**: static method of [<code>Salesforce</code>](#Salesforce)  
+
+| Param | Type |
+| --- | --- |
+| callback | [<code>callback</code>](#callback) | 
+
+**Example**  
+
+```js
+var salesforce = Salesforce();
+salesforce.authenticate(querySelectedInstanceCallback);
+```
+<a name="Salesforce.querySelectedInstance"></a>
+
+#### Salesforce.querySelectedInstance(field, object, filterField, filterOperator, filterValue, callback)
+This method lets user query services in an user's instance on salesforce platform.
+https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm
+
+**Kind**: static method of [<code>Salesforce</code>](#Salesforce)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| field | <code>string</code> | Example: "phone" |
+| object | <code>string</code> | Example: "Contact" |
+| filterField | <code>string</code> | Example: "name" |
+| filterOperator | <code>string</code> | Example: "=" |
+| filterValue | <code>string</code> | Example: "'John Doe'" |
+| callback | [<code>callback</code>](#callback) |  |
+
+**Example**  
+
+```js
+var salesforce = Salesforce();
+salesforce.authenticate(querySelectedInstanceCallback);
+
+var sendResponseCallback = function(err, queryResult) {
+  if (err ){
+      resp.error("Failed to execute Query" + queryResult);
+  }else {
+      resp.success(queryResult)   
+  }
+};
+
+function querySelectedInstanceCallback(err, data) {
+    if (err){
+        sendResponse(true, ("Failed to authenticate" + data));
+    }else {
+        //Ex: query: "SELECT phone from Contact where name = 'John Doe'"
+        var field = "phone";
+        var object = "Contact";
+        var filterField = "name";
+        var filterOperator = "=";
+        var filterValue = "'JohnDoe'"
+        
+        salesforce.querySelectedInstance(field, object, filterField, filterOperator, filterValue, sendResponseCallback);
+    }
+}
+```
